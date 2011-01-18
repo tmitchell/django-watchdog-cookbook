@@ -1,0 +1,25 @@
+upstream gunicorn_backend {
+    server 127.0.0.1:8888;
+}
+
+server {
+    listen 80;
+
+    access_log  /var/log/nginx/watchdog.log;
+
+    location /favicon.ico {
+        root /var/www/watchdog/media/;
+    }
+
+    location /site-media/ {
+        alias /var/www/watchdog/media/;
+    }
+
+    location / {
+        ssi on;
+        proxy_pass http://gunicorn_backend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}

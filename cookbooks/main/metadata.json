@@ -1,0 +1,33 @@
+{
+  "groupings": {
+  },
+  "recommendations": {
+  },
+  "attributes": {
+  },
+  "suggestions": {
+  },
+  "dependencies": {
+  },
+  "conflicting": {
+  },
+  "license": "Apache v2.0",
+  "long_description": "",
+  "providing": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.0",
+  "maintainer": "Your Name",
+  "name": "main",
+  "recipes": {
+    "munin": "Installs munin monitoring",
+    "default": "Creates users and groups, installs base system packages, updates hosts",
+    "memcached": "Installs memcached",
+    "python": "Installs python environment"
+  },
+  "replacing": {
+  },
+  "maintainer_email": "youremail@example.com",
+  "description": "A fabulous new cookbook"
+}

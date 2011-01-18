@@ -1,0 +1,47 @@
+{
+    "run_list": [ 
+        "recipe[main::default]",
+        "recipe[main::python]",
+        "recipe[sentry::nginx]",
+        "recipe[sentry::security]",
+        "recipe[sentry::watchdog]"
+    ],
+
+    "base_packages": [
+        "git-core",
+        "bash-completion"
+    ],
+
+    "ubuntu_python_packages": [
+        "python-setuptools",
+        "python-pip",
+        "python-dev",
+        "libpq-dev"
+    ],
+
+    "pip_python_packages": {
+        "virtualenv": "1.5.1",
+        "mercurial": "1.7"
+    },
+    
+    "users": {
+       "fido": {
+           "id": 1001,
+           "full_name": "Watchdog User",
+           "keys": [
+                "ssh-rsa YOUR KEY HERE someone@somehost"
+           ]
+       }
+    },
+
+    "groups": {
+        "fido": {
+            "gid": 201,
+            "members": ["fido"]
+            }
+    },
+
+    "all_servers": {
+        "watchdog": ["127.0.0.1", "0.0.0.0"]
+    }
+}

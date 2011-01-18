@@ -1,0 +1,35 @@
+{
+  "groupings": {
+  },
+  "recommendations": {
+  },
+  "attributes": {
+  },
+  "suggestions": {
+  },
+  "dependencies": {
+  },
+  "conflicting": {
+  },
+  "license": "BSD",
+  "long_description": "Installs a Django site running the django-sentry server.  The architecture\nis an Nginx instance which serves up static files and proxies requests to a\ngunicorn WSGI server. Django clients can install the django-sentry app to\noffload error reporting to Sentry.\n",
+  "providing": {
+  },
+  "platforms": {
+    "ubuntu": [
+      ">= 10.04"
+    ]
+  },
+  "version": "0.0.1",
+  "maintainer": "Taylor Mitchell",
+  "name": "sentry",
+  "recipes": {
+    "security": "Installs and configures UFW",
+    "watchdog": "Creates and configures site virtualenv and WSGI server",
+    "nginx": "Installs and configures nginx proxy and static content web server"
+  },
+  "replacing": {
+  },
+  "maintainer_email": "taylor.mitchell@gmail.com",
+  "description": "Installs a basic django-sentry site"
+}
