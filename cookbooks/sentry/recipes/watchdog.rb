@@ -17,7 +17,7 @@ directory "/home/fido/sites/watchdog/run" do
 end
 
 git "/home/fido/sites/watchdog/checkouts/watchdog" do
-    repository "git@github.com:tmitchell/django-watchdog.git"
+    repository "https://github.com/tmitchell/django-watchdog.git"
     reference "HEAD"
     user "fido"
     group "fido"
