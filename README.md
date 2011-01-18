@@ -14,7 +14,7 @@ First clone the repository
 
 Now edit the following files:
 
-*solo.rb*
+*auth.cfg*
 
 Add the username (required) and password (optional) for an account under your control on the target system.  This account must have sudo rights.
 
@@ -28,17 +28,25 @@ Edit the following values:
 
  * `all_servers` - Edit this to reflect the hostname of your target system, as well as its internal and external IP's.  This will be used to update the `/etc/hosts` file.
 
-Switch to a virtualenv: `mkvirtualenv watchdog && workon watchdog`
+Switch to a virtualenv
 
-Install [LittleChef][littlechef]: `pip install littlechef`
+    mkvirtualenv watchdog && workon watchdog
 
-LittleChef is a wrapper over fabric and chef-solo that gets you bootstrapped and deals with the various configurations you might encounter.  If you're new to Chef, it's a quick way to get running quickly.  If you're already using and comfortable with chef-solo, you should be able to use the cookbook and recipes without much extra work.
+Install [LittleChef][lc]
 
-Bootstrap your target system: `cook node:your.hostname deploy_chef`
+    pip install littlechef
+
+LittleChef is a wrapper over fabric and chef-solo that gets you bootstrapped and deals with the various configurations you might encounter.  If you're new to Chef, it's a great way to get running quickly.  If you're already using and comfortable with chef-solo, you should be able to use the cookbook and recipes without much extra work.
+
+Bootstrap your target system
+
+    cook node:your.hostname deploy_chef
 
 After this process completes, your system will be set up with chef-solo.  Now we need to get it running the application stack.
 
-Configure your target system `cook node:your.hostname configure`
+Set up and configure the target system (make sure you're in the `django-watchdog-cookbook/` root directory)
+
+    cook node:your.hostname configure
 
 After a while, this should return back and you should be able to navigate to http://your.hostname and see your django-sentry instance running!
 
