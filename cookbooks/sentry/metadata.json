@@ -16,9 +16,6 @@
   "providing": {
   },
   "platforms": {
-    "ubuntu": [
-      ">= 10.04"
-    ]
   },
   "version": "0.0.1",
   "maintainer": "Taylor Mitchell",

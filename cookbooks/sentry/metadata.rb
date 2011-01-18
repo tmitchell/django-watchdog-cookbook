@@ -15,5 +15,5 @@ recipe  "nginx", "Installs and configures nginx proxy and static content web ser
 recipe  "security", "Installs and configures UFW"
 recipe  "watchdog", "Creates and configures site virtualenv and WSGI server"
 
-supports "ubuntu", ">= 10.04"
-# probably others, hasn't been tested
+# Haven't tested anything but Ubuntu, may or may not work
+#supports "ubuntu", ">= 10.04"
